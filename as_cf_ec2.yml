@@ -1,0 +1,19 @@
+# call AWS CloudFormation
+# 2020/09/15 IBM K.Ishikura
+#
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: launch ansible cloudformation example
+    action: cloudformation
+      stack_name="ansible-cloudformation"
+      state=present
+      region=us-east-2
+      disable_rollback=yes
+      template=cf_ec2.yml
+    args:
+      tags:
+        Stack: ansible-cloudformation

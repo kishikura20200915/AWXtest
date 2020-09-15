@@ -1,0 +1,13 @@
+# Create EC2
+# 2020/09/15 IBM K.Ishikura
+#
+Resources:
+  EC2:
+    Type: AWS::EC2::Instance
+    Properties:
+#      ImageId: ami-016b213e65284e9c9
+      ImageId: ami-0ca69a9d06da3835d
+      InstanceType: t2.micro
+      Tags:
+          - Key: Name
+            Value: cfec2-20200914
